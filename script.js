@@ -1,3 +1,5 @@
+// JavaScript
+
 // References
 const moves = document.getElementById("moves-count");
 const timeValue = document.getElementById("time");
@@ -58,7 +60,7 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      `;
   }
-  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+  gameContainer.style.gridTemplateColumns = `repeat(auto-fit, minmax(6.25em, 1fr))`; /* تعديل عدد الأعمدة حسب حجم الشاشة */
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -134,15 +136,10 @@ startButton.addEventListener("click", () => {
 });
 
 // Function to stop the game
-const stopGame = () => {
-  controls.classList.remove("hide");
-  stopButton.classList.add("hide");
-  startButton.classList.remove("hide");
-  clearInterval(interval);
-  cards.forEach((card) => {
-    card.classList.remove("flipped");
-  });
-};
+stopButton.addEventListener("click", () => {
+  stopGame();
+  result.innerHTML = "<h2>Game Over</h2>";
+});
 
 // Function to initialize the game
 const initializer = () => {
@@ -158,4 +155,7 @@ const stopGame = () => {
   stopButton.classList.add("hide");
   startButton.classList.remove("hide");
   clearInterval(interval);
+  cards.forEach((card) => {
+    card.classList.remove("flipped");
+  });
 };
