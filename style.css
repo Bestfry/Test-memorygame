@@ -40,7 +40,7 @@ body {
 
 .card-container {
   position: relative;
-  width: auto; /* عرض غير محدد */
+  width: 100%; /* تعديل العرض ليكون 100% */
   height: auto; /* طول غير محدد */
   cursor: pointer;
 }
@@ -140,13 +140,13 @@ button {
 /* للأجهزة اللوحية */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* تعديل هنا */
   }
 }
 
 /* لشاشات الكمبيوتر المكتبية */
 @media screen and (min-width: 1025px) {
   .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr)); /* وهنا */
   }
 }
