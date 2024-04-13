@@ -133,7 +133,7 @@ button {
 /* للهواتف الذكية */
 @media screen and (max-width: 480px) {
   .card-container {
-    width: calc(100% / 2); /* عرض عمودين */
+    width: 100%; /* عرض كامل */
   }
 }
 
