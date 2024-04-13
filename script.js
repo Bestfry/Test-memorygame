@@ -1,5 +1,3 @@
-// JavaScript
-
 // References
 const moves = document.getElementById("moves-count");
 const timeValue = document.getElementById("time");
@@ -60,7 +58,7 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      `;
   }
-  gameContainer.style.gridTemplateColumns = `repeat(auto-fit, minmax(6.25em, 1fr))`; /* تعديل عدد الأعمدة حسب حجم الشاشة */
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
