@@ -40,14 +40,15 @@ body {
 
 .card-container {
   position: relative;
-  width: 100%; /* تعديل العرض ليكون 100% */
-  height: auto; /* طول غير محدد */
-  cursor: pointer;
+  width: 100%;
+  display: flex; /* استخدم flexbox لترتيب العناصر بدون تداخل */
+  justify-content: center; /* يوسع المساحة الأفقية للكروت ويوسطها */
+  align-items: center; /* يوسط الكروت عمودياً */
+  height: 100%;
 }
 
 .card-before,
 .card-after {
-  position: absolute;
   border-radius: 5px;
   width: 100%;
   height: 100%;
