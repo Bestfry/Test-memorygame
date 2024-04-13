@@ -10,17 +10,16 @@ body {
 }
 
 .wrapper {
-  box-sizing: content-box;
   max-width: 26.87em; /* تعيين العرض الأقصى */
   width: 100%;
   padding: 2.5em 3em;
   background-color: #ffffff;
   position: absolute;
-  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   border-radius: 0.6em;
   box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+  transform: translate(-50%, -50%);
 }
 
 .game-container {
