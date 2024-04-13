@@ -147,7 +147,7 @@ const initializer = () => {
   matrixGenerator(cardValues);
 };
 
-// Function to stop the game
+// Function to stop the game and reset all elements
 const stopGame = () => {
   controls.classList.remove("hide");
   stopButton.classList.add("hide");
@@ -155,5 +155,24 @@ const stopGame = () => {
   clearInterval(interval);
   cards.forEach((card) => {
     card.classList.remove("flipped");
+    card.classList.remove("matched"); // Reset matched cards
   });
+  result.innerHTML = ""; // Clear result message
+  movesCount = 0; // Reset moves counter
+  minutes = 0; // Reset minutes
+  seconds = 0; // Reset seconds
+  timeValue.innerHTML = `<span>Time:</span>00:00`; // Reset time display
 };
+
+startButton.addEventListener("click", () => {
+  stopGame(); // Stop the game if it's already running
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  interval = setInterval(timeGenerator, 1000);
+  moves.innerHTML = `<span>Moves:</span> 0`;
+  initializer();
+});
+
+// Update stopButton click event to stop the game
+stopButton.addEventListener("click", stopGame);
