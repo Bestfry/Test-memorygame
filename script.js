@@ -14,6 +14,8 @@ let movesCount = 0;
 let winCount = 0;
 let seconds = 0;
 let minutes = 0;
+let firstCardValue;
+let secondCardValue;
 
 // Items array
 const items = [
@@ -70,7 +72,7 @@ const matrixGenerator = (cardValues, size = 4) => {
         } else {
           movesCounter();
           secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
+          secondCardValue = card.getAttribute("data-card-value");
           if (firstCardValue == secondCardValue) {
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
@@ -135,4 +137,25 @@ startButton.addEventListener("click", () => {
 
 // Function to stop the game
 stopButton.addEventListener("click", () => {
-  stop
+  stopGame();
+  result.innerHTML = "<h2>Game Over</h2>";
+});
+
+// Function to initialize the game
+const initializer = () => {
+  result.innerText = "";
+  winCount = 0;
+  let cardValues = generateRandom();
+  matrixGenerator(cardValues);
+};
+
+// Function to stop the game
+const stopGame = () => {
+  controls.classList.remove("hide");
+  stopButton.classList.add("hide");
+  startButton.classList.remove("hide");
+  clearInterval(interval);
+  cards.forEach((card) => {
+    card.classList.remove("flipped");
+  });
+};
