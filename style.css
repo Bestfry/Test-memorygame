@@ -127,14 +127,4 @@ button {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
-@media (max-width: 280px) {
-  .game-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .card-container {
-    width: 50%;
-    padding-top: 50%; /* لضمان عرض وارتفاع متساويين للبطاقة */
-  }
-}
