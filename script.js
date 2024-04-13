@@ -137,7 +137,7 @@ startButton.addEventListener("click", () => {
 
 // Function to stop the game
 stopButton.addEventListener("click", () => {
-  stopGame();
+  restartGame();
   result.innerHTML = "<h2>Game Over</h2>";
 });
 
@@ -147,15 +147,38 @@ const initializer = () => {
   winCount = 0;
   let cardValues = generateRandom();
   matrixGenerator(cardValues);
+  stopButton.style.display = "block"; // Show the stop button
 };
+
 
 // Function to stop the game
 const stopGame = () => {
   controls.classList.remove("hide");
-  stopButton.classList.add("hide");
+  
+  stopButton.style.display = "none"; // Hide the stop button
   startButton.classList.remove("hide");
   clearInterval(interval);
   cards.forEach((card) => {
     card.classList.remove("flipped");
+    stopButton.classList.add("hide");
   });
+};
+
+
+
+// Function to restart the game
+const restartGame = () => {
+  stopGame(); // Stop the current game if it's running
+  
+  // Reset all variables to their initial values
+  firstCard = false;
+  secondCard = false;
+  movesCount = 0;
+  winCount = 0;
+  seconds = 0;
+  minutes = 0;
+  clearInterval(interval);
+  
+  // Initialize the game again
+  initializer();
 };
