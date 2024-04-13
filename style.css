@@ -127,26 +127,3 @@ button {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
-
-/* تعديلات لتحسين التوافق مع مختلف أحجام الشاشات */
-
-/* للهواتف الذكية */
-@media screen and (max-width: 480px) {
-  .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
-
-/* للأجهزة اللوحية */
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-  .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* تعديل هنا */
-  }
-}
-
-/* لشاشات الكمبيوتر المكتبية */
-@media screen and (min-width: 1025px) {
-  .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* وهنا */
-  }
-}
