@@ -40,8 +40,8 @@ body {
 
 .card-container {
   position: relative;
-  width: 6.25em;
-  height: auto; /* ارتفاع غير محدد */
+  width: auto; /* عرض غير محدد */
+  height: auto; /* طول غير محدد */
   cursor: pointer;
 }
 
@@ -132,21 +132,21 @@ button {
 
 /* للهواتف الذكية */
 @media screen and (max-width: 480px) {
-  .card-container {
-    width: 100%; /* عرض كامل */
+  .game-container {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 }
 
 /* للأجهزة اللوحية */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-  .card-container {
-    width: calc(100% / 3); /* 3 أعمدة */
+  .game-container {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
 }
 
 /* لشاشات الكمبيوتر المكتبية */
 @media screen and (min-width: 1025px) {
-  .card-container {
-    width: calc(100% / 4); /* 4 أعمدة */
+  .game-container {
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   }
 }
