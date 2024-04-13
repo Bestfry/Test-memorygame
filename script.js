@@ -116,48 +116,23 @@ const timeGenerator = () => {
 
 // Function to start the game
 startButton.addEventListener("click", () => {
-  stopGame(); // Stop the game if it's already running
+  movesCount = 0;
+  seconds = 0;
+  minutes = 0;
   controls.classList.add("hide");
   stopButton.classList.remove("hide");
   startButton.classList.add("hide");
   interval = setInterval(timeGenerator, 1000);
-  moves.innerHTML = `<span>Moves:</span> 0`;
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
   initializer();
+
+  // Adding timeout to end the game after 1 minute
+  setTimeout(() => {
+    stopGame();
+    result.innerHTML = "<h2>Game Over</h2>";
+  }, 60000);
 });
 
 // Function to stop the game
 stopButton.addEventListener("click", () => {
-  stopGame();
-  controls.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; // Add white background
-});
-
-// Function to initialize the game
-const initializer = () => {
-  result.innerHTML = "";
-  winCount = 0;
-  let cardValues = generateRandom();
-  matrixGenerator(cardValues);
-};
-
-// Function to stop the game and reset all elements
-const stopGame = () => {
-  controls.classList.remove("hide");
-  stopButton.classList.add("hide");
-  startButton.classList.remove("hide");
-  clearInterval(interval);
-  cards.forEach((card) => {
-    card.classList.remove("flipped");
-    card.classList.remove("matched"); // Reset matched cards
-  });
-  result.innerHTML = ""; // Clear result message
-  movesCount = 0; // Reset moves counter
-  minutes = 0; // Reset minutes
-  seconds = 0; // Reset seconds
-  timeValue.innerHTML = `<span>Time:</span>00:00`; // Reset time display
-  // Function to stop the game
-stopButton.addEventListener("click", () => {
-  stopGame();
-  controls.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; // Add white background
-  clearInterval(interval); // Clear the interval timer
-});
-};
+  stop
