@@ -10,39 +10,37 @@ body {
 }
 
 .wrapper {
-  max-width: 26.87em;
-  width: 100%;
+  box-sizing: content-box;
+  width: 26.87em;
   padding: 2.5em 3em;
   background-color: #ffffff;
   position: absolute;
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   border-radius: 0.6em;
   box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
-  transform: translate(-50%, -50%);
 }
 
 .game-container {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6.25em, 1fr));
   gap: 0.6em;
 }
 
 .stats-container {
   text-align: right;
   margin-bottom: 1.2em;
-  width: 100%;
 }
 
-.stats-container div {
-  display: inline-block;
+.stats-container span {
+  font-weight: 600;
 }
 
 .card-container {
   position: relative;
-  width: 100%;
+  width: 6.25em;
   height: 6.25em;
   cursor: pointer;
 }
@@ -62,7 +60,7 @@ body {
 }
 
 .card-before {
-  background-color: #ffcc00;
+  background-color: #ffcc00; /* هنا يتم تعيين لون البطاقة الأصفر */
   font-size: 2.8em;
   font-weight: 600;
 }
@@ -87,10 +85,9 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: #f9f7f7;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
 }
 
 button {
@@ -106,9 +103,7 @@ button {
   margin: 1.1em auto 0 auto;
   background-color: #3d3d3d;
   color: #ffffff;
-  display: none;
 }
-
 
 .controls-container button {
   font-size: 1.4em;
