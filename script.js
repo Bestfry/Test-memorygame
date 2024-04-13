@@ -116,32 +116,21 @@ const timeGenerator = () => {
 
 // Function to start the game
 startButton.addEventListener("click", () => {
-  movesCount = 0;
-  seconds = 0;
-  minutes = 0;
+  stopGame(); // Stop the game if it's already running
   controls.classList.add("hide");
   stopButton.classList.remove("hide");
   startButton.classList.add("hide");
   interval = setInterval(timeGenerator, 1000);
-  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  moves.innerHTML = `<span>Moves:</span> 0`;
   initializer();
-
-  // Adding timeout to end the game after 1 minute
-  setTimeout(() => {
-    stopGame();
-    result.innerHTML = "<h2>Game Over</h2>";
-  }, 60000);
 });
 
 // Function to stop the game
-stopButton.addEventListener("click", () => {
-  stopGame();
-  result.innerHTML = "<h2>Game Over</h2>";
-});
+stopButton.addEventListener("click", stopGame);
 
 // Function to initialize the game
 const initializer = () => {
-  result.innerText = "";
+  result.innerHTML = "";
   winCount = 0;
   let cardValues = generateRandom();
   matrixGenerator(cardValues);
@@ -163,16 +152,3 @@ const stopGame = () => {
   seconds = 0; // Reset seconds
   timeValue.innerHTML = `<span>Time:</span>00:00`; // Reset time display
 };
-
-startButton.addEventListener("click", () => {
-  stopGame(); // Stop the game if it's already running
-  controls.classList.add("hide");
-  stopButton.classList.remove("hide");
-  startButton.classList.add("hide");
-  interval = setInterval(timeGenerator, 1000);
-  moves.innerHTML = `<span>Moves:</span> 0`;
-  initializer();
-});
-
-// Update stopButton click event to stop the game
-stopButton.addEventListener("click", stopGame);
