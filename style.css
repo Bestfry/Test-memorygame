@@ -147,6 +147,6 @@ button {
 /* لشاشات الكمبيوتر المكتبية */
 @media screen and (min-width: 1025px) {
   .game-container {
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr)); /* وهنا */
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* وهنا */
   }
 }
