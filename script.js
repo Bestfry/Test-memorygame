@@ -126,7 +126,10 @@ startButton.addEventListener("click", () => {
 });
 
 // Function to stop the game
-stopButton.addEventListener("click", stopGame);
+stopButton.addEventListener("click", () => {
+  stopGame();
+  controls.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; // Add white background
+});
 
 // Function to initialize the game
 const initializer = () => {
