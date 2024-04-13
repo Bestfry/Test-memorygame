@@ -10,7 +10,8 @@ body {
 }
 
 .wrapper {
-  width: 400px; /* تحديد العرض بالبكسل بدلاً من الـ em */
+  width: 100%; /* تغيير العرض ليكون 100% بدلاً من عرض ثابت */
+  max-width: 400px; /* إضافة حد أقصى للعرض */
   padding: 2.5em 3em;
   background-color: #ffffff;
   position: absolute;
@@ -19,8 +20,8 @@ body {
   border-radius: 0.6em;
   box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
   transform: translate(-50%, -50%); /* تعديل هنا للمحاولة في وسط الشاشة بشكل صحيح */
+  overflow-x: auto; /* السماح بالتمرير الأفقي عند الحاجة */
 }
-
 .game-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* تعديلات لعرض الكروت بشكل صحيح */
