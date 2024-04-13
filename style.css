@@ -24,9 +24,8 @@ body {
 
 .game-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* تحديد عدد الأعمدة بناءً على حجم الشاشة */
   gap: 10px;
-  margin: 0 -1em;
 }
 
 .stats-container {
