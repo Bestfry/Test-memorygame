@@ -22,15 +22,16 @@ body {
 }
 
 .game-container {
-  position: relative;
-  width: 100%;
   display: grid;
-  gap: 0.6em;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* تعديلات لعرض الكروت بشكل صحيح */
+  gap: 10px;
 }
 
 .stats-container {
-  text-align: right;
-  margin-bottom: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  text-align: right; /* تعديلات على العرض ليظهر بشكل صحيح */
+  margin-bottom: 1em;
 }
 
 .stats-container span {
