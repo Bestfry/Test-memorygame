@@ -6,7 +6,6 @@ const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
-const overlay = document.querySelector(".overlay");
 let cards;
 let interval;
 let firstCard = false;
@@ -121,7 +120,6 @@ startButton.addEventListener("click", () => {
   seconds = 0;
   minutes = 0;
   controls.classList.add("hide");
-  overlay.style.display = "none";
   stopButton.classList.remove("hide");
   startButton.classList.add("hide");
   interval = setInterval(timeGenerator, 1000);
@@ -152,10 +150,10 @@ const initializer = () => {
 // Function to stop the game
 const stopGame = () => {
   controls.classList.remove("hide");
-  overlay.style.display = "block";
   stopButton.classList.add("hide");
   startButton.classList.remove("hide");
   clearInterval(interval);
+  cards.forEach((card) => {
+    card.classList.remove("flipped");
+  });
 };
-
-initializer(); // Initialize the game when the page loads
