@@ -154,4 +154,10 @@ const stopGame = () => {
   minutes = 0; // Reset minutes
   seconds = 0; // Reset seconds
   timeValue.innerHTML = `<span>Time:</span>00:00`; // Reset time display
+  // Function to stop the game
+stopButton.addEventListener("click", () => {
+  stopGame();
+  controls.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; // Add white background
+  clearInterval(interval); // Clear the interval timer
+});
 };
