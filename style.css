@@ -10,15 +10,9 @@ body {
 }
 
 .wrapper {
-  max-width: 26.87em;
-  width: 100%;
-  padding: 2.5em 3em;
-  background-color: #ffffff;
   position: absolute;
   left: 50%;
   top: 50%;
-  border-radius: 0.6em;
-  box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
   transform: translate(-50%, -50%);
 }
 
@@ -85,10 +79,10 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: auto;
-  background-color: #f9f7f7;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 0;
+  left: 0;
 }
 
 button {
@@ -100,7 +94,6 @@ button {
 
 #stop {
   font-size: 1.1em;
-  display: block;
   margin: 1.1em auto 0 auto;
   background-color: #3d3d3d;
   color: #ffffff;
