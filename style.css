@@ -127,14 +127,14 @@ button {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
-@media screen and (min-width: 481px) and (max-width: 767px) {
+/*@media screen and (min-width: 481px) and (max-width: 767px) {
   .card-container {
     width: calc(100% / 3); /* 3 columns */
-  }
-}
-@media screen and (min-width: 768px) {
+/* }
+}*/
+/*@media screen and (min-width: 768px) {
   .card-container {
     width: calc(100% / 4); /* 4 columns */
-  }
-}
+  /*}*/
+/*}*/
 
