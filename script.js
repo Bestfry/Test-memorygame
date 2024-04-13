@@ -155,7 +155,7 @@ const initializer = () => {
 const stopGame = () => {
   controls.classList.remove("hide");
   
-  stopButton.style.display = "none"; // Hide the stop button
+  //stopButton.style.display = "none"; // Hide the stop button
   startButton.classList.remove("hide");
   clearInterval(interval);
   cards.forEach((card) => {
