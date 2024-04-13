@@ -134,10 +134,15 @@ startButton.addEventListener("click", () => {
 });
 
 // Function to stop the game
-stopButton.addEventListener("click", () => {
-  stopGame();
-  result.innerHTML = "<h2>Game Over</h2>";
-});
+const stopGame = () => {
+  controls.classList.remove("hide");
+  stopButton.classList.add("hide");
+  startButton.classList.remove("hide");
+  clearInterval(interval);
+  cards.forEach((card) => {
+    card.classList.remove("flipped");
+  });
+};
 
 // Function to initialize the game
 const initializer = () => {
