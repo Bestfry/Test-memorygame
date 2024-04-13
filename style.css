@@ -1,3 +1,5 @@
+/* CSS */
+
 * {
   padding: 0;
   margin: 0;
@@ -36,12 +38,10 @@ body {
   width: 100%; /* تعديل العرض ليناسب حجم الشاشة */
 }
 
-.stats-container span {
-  font-weight: 600;
-}
 .stats-container div {
   display: inline-block;
 }
+
 .card-container {
   position: relative;
   width: 100%; /* تعديل العرض ليناسب حجم الشاشة */
@@ -113,7 +113,7 @@ button {
 .controls-container button {
   font-size: 1.4em;
   box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
-  background-color:orange;
+  background-color: orange;
 }
 
 .hide {
