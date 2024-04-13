@@ -54,11 +54,11 @@ const matrixGenerator = (cardValues, size = 4) => {
      <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before">?</div>
         <div class="card-after">
-        <img with="100px" height="100px"src="${cardValues[i].image}" class="image"/></div>
+        <img width="100px" height="100px" src="${cardValues[i].image}" class="image"/></div>
      </div>
      `;
   }
-  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+  gameContainer.style.gridTemplateColumns = `repeat(auto-fit, minmax(6.25em, 1fr))`;
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -99,7 +99,7 @@ const matrixGenerator = (cardValues, size = 4) => {
 // Function to count moves
 const movesCounter = () => {
   movesCount += 1;
-  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
 };
 
 // Function to generate time
@@ -111,7 +111,7 @@ const timeGenerator = () => {
   }
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+  timeValue.innerHTML = `<span>Time:</span> ${minutesValue}:${secondsValue}`;
 };
 
 // Function to start the game
