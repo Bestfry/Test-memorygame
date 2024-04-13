@@ -40,8 +40,8 @@ body {
 
 .card-container {
   position: relative;
-  width: 6.25em;
-  height: 6.25em;
+  width: 6.25em; /* العرض الافتراضي */
+  height: 6.25em; /* الارتفاع الافتراضي */
   cursor: pointer;
 }
 
@@ -60,7 +60,7 @@ body {
 }
 
 .card-before {
-  background-color: #ffcc00; /* هنا يتم تعيين لون البطاقة الأصفر */
+  background-color: #ffcc00;
   font-size: 2.8em;
   font-weight: 600;
 }
@@ -127,14 +127,22 @@ button {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
-/*@media screen and (min-width: 481px) and (max-width: 767px) {
+
+/* تعديلات لتحسين التوافق مع مختلف أحجام الشاشات */
+
+/* للهواتف الذكية */
+@media screen and (max-width: 480px) {
   .card-container {
-    width: calc(100% / 3); /* 3 columns */
-/* }
-}*/
-/*@media screen and (min-width: 768px) {
+    width: calc(100% / 2); /* عرض عمودين */
+    height: 10em; /* ارتفاع محدد */
+  }
+}
+
+/* للأجهزة اللوحية */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
   .card-container {
-    width: calc(100% / 4); /* 4 columns */
-  /*}*/
-/*}*/
+    width: calc(100% / 3); /* 3 أعمدة */
+    height: 12em; /* ارتفاع محدد */
+  }
+}
 
