@@ -33,15 +33,18 @@ body {
 .stats-container {
   text-align: right;
   margin-bottom: 1.2em;
+  width: 100%; /* تعديل العرض ليناسب حجم الشاشة */
 }
 
 .stats-container span {
   font-weight: 600;
 }
-
+.stats-container div {
+  display: inline-block;
+}
 .card-container {
   position: relative;
-  width: 6.25em;
+  width: 100%; /* تعديل العرض ليناسب حجم الشاشة */
   height: 6.25em;
   cursor: pointer;
 }
@@ -86,9 +89,10 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: auto; /* تغيير الارتفاع ليكون تلقائيًا بحسب المحتوى */
   background-color: #f9f7f7;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 button {
