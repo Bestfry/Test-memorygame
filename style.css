@@ -40,8 +40,8 @@ body {
 
 .card-container {
   position: relative;
-  width: 6.25em; /* العرض الافتراضي */
-  height: 6.25em; /* الارتفاع الافتراضي */
+  width: 6.25em;
+  height: 6.25em;
   cursor: pointer;
 }
 
@@ -134,7 +134,7 @@ button {
 @media screen and (max-width: 480px) {
   .card-container {
     width: calc(100% / 2); /* عرض عمودين */
-    height: 10em; /* ارتفاع محدد */
+    height: 6.25em; /* ارتفاع محدد */
   }
 }
 
@@ -142,7 +142,14 @@ button {
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .card-container {
     width: calc(100% / 3); /* 3 أعمدة */
-    height: 12em; /* ارتفاع محدد */
+    height: 8em; /* ارتفاع محدد */
   }
 }
 
+/* لشاشات الكمبيوتر المكتبية */
+@media screen and (min-width: 1025px) {
+  .card-container {
+    width: calc(100% / 4); /* 4 أعمدة */
+    height: 10em; /* ارتفاع محدد */
+  }
+}
