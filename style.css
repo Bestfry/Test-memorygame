@@ -26,23 +26,21 @@ body {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6.25em, 1fr));
   gap: 0.6em;
 }
 
 .stats-container {
   text-align: right;
   margin-bottom: 1.2em;
-  width: 100%;
 }
 
-.stats-container div {
-  display: inline-block;
+.stats-container span {
+  font-weight: 600;
 }
 
 .card-container {
   position: relative;
-  width: 100%;
+  width: 6.25em;
   height: 6.25em;
   cursor: pointer;
 }
