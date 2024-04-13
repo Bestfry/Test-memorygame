@@ -10,30 +10,30 @@ body {
 }
 
 .wrapper {
-  max-width: 400px;
+  box-sizing: content-box;
+  max-width: 26.87em; /* تعيين العرض الأقصى */
   width: 100%;
-  padding: 2.5em 1em;
+  padding: 2.5em 3em;
   background-color: #ffffff;
   position: absolute;
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   border-radius: 0.6em;
   box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
-  transform: translate(-50%, -50%);
 }
 
 .game-container {
+  position: relative;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* تحديد عدد الأعمدة بناءً على حجم الشاشة */
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(6.25em, 1fr)); /* تعديل عدد الأعمدة حسب حجم الشاشة */
+  gap: 0.6em;
 }
 
 .stats-container {
-  display: flex;
-  justify-content: space-between;
   text-align: right;
-  margin-bottom: 1em;
-  padding: 0 1em;
+  margin-bottom: 1.2em;
 }
 
 .stats-container span {
